@@ -1,14 +1,11 @@
-import { useState } from 'react';
-
-import './App.css';
+import './initialStyle/App.css';
+import Todo from './projects/todo/Todo';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
-        <h1>hello world</h1>
+        <Todo />
       </div>
     </>
   );
