@@ -5,6 +5,9 @@ const TodoForm = ({ addTodo, todo }) => {
   const handleValue = (event) => {
     setValue(event.target.value) || '';
   };
+  const handlePressEnter = (event) => {
+    if (event.key == 'Enter') handleAddTask();
+  };
   const handleAddTask = () => {
     const newTodo = [...todo, value];
     addTodo(newTodo) || setValue('');
@@ -13,6 +16,7 @@ const TodoForm = ({ addTodo, todo }) => {
     <div>
       <input
         value={value}
+        onKeyPress={handlePressEnter}
         onChange={handleValue}
         placeholder="wrtie your task"
         type="text"
