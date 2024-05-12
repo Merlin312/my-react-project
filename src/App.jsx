@@ -4,12 +4,10 @@ import Todo from './projects/todo/Todo';
 
 function App() {
   return (
-    <>
-      <div>
-        <Other />
-        <Todo />
-      </div>
-    </>
+    <div>
+      <Other />
+      <Todo />
+    </div>
   );
 }
 

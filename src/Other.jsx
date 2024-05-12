@@ -5,7 +5,7 @@ const Other = () => {
     setInterval(() => {
       console.clear();
       console.log('clear');
-    }, 3000);
+    }, 30000);
   }, []);
   return <></>;
 };

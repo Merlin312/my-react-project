@@ -10,11 +10,16 @@ button[type='submit'] {
   padding: 0.5rem 1rem;
   background-color: #646cff;
   color: #fff;
-  border: none;
+  /* border: none; */
+  /* border: 1px solid #646cff; */
   border-radius: 4px;
   cursor: pointer;
 }
 input[type='text']:focus {
   border-color: #646cff;
+  outline: none;
+}
+button[type='submit']:hover {
+  border: 1px solid #d8d8d9;
   outline: none;
 }
