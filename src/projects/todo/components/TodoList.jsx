@@ -8,12 +8,17 @@ const TodoList = ({ todo, addTodo }) => {
   return (
     <div>
       <h1>Todo list:</h1>
-      <ul className="todo-list">
+      <ul>
         {todo.map((todos, index) => {
           return (
             <li key={index}>
               {todos}
-              <button onClick={() => handleDelete(index)}>Del</button>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(index)}
+              >
+                Del
+              </button>
             </li>
           );
         })}
