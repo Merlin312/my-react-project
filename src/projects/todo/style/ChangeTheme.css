@@ -3,7 +3,7 @@
   --light-bg-color: rgb(222, 227, 227);
   --light-text-color: rgb(47, 45, 45);
   --dark-bg-color: rgb(41, 45, 45);
-  --dark-text-color: antiquewhite;
+  --dark-text-color: rgb(45, 47, 72);
   --primary-color: #4caf50;
   --hover-color: #45a049;
 }
@@ -11,7 +11,7 @@
 /* Загальні стилі */
 .btnTheme {
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 8px 12px;
   cursor: pointer;
   border: none;
   border-radius: 5px;

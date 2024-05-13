@@ -22,21 +22,39 @@ const TodoList = ({ todo, addTodo }) => {
       <ul>
         {todo.map((todos, index) => {
           return (
-            <li key={index}>
-              {todos.text}
-              <button
-                className="btnDone"
-                onClick={() => handleCompleted(index)}
-              >
-                {todos.completed ? 'Undo' : 'Done'}
-              </button>
-              {console.log(todos.completed)}
-              <button
-                className="delete-button"
-                onClick={() => handleDelete(index)}
-              >
-                Delete
-              </button>
+            <li
+              key={index}
+              style={{
+                textDecoration: todos.completed ? 'line-through' : 'none',
+              }}
+            >
+              <div>
+                <span
+                  className="circle"
+                  style={{
+                    backgroundColor: todos.completed
+                      ? '#4CAF50'
+                      : 'transparent',
+                  }}
+                ></span>
+
+                {todos.text}
+              </div>
+
+              <div>
+                <button
+                  className="btnDone"
+                  onClick={() => handleCompleted(index)}
+                >
+                  {todos.completed ? 'Undo' : 'Done'}
+                </button>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDelete(index)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           );
         })}

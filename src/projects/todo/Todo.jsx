@@ -5,9 +5,11 @@ import TodoItem from './components/TodoItem';
 
 const Todo = () => {
   const [todo, setTodo] = useState([]);
+  const [theme, setTheme] = useState('light');
+
   return (
     <div>
-      <TodoItem />
+      <TodoItem theme={theme} setTheme={setTheme} />
       <TodoForm todo={todo} addTodo={setTodo} />
       <TodoList todo={todo} addTodo={setTodo} />
     </div>

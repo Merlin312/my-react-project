@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import './../../style/ChangeTheme.css';
 
-const ChangeTheme = () => {
-  const [theme, setTheme] = useState('light');
-
+const ChangeTheme = ({ theme, setTheme }) => {
   const toggleTheme = () => {
     // Отримуємо оновлене значення теми за допомогою функції оновлення
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));

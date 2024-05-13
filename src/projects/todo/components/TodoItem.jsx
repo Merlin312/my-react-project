@@ -1,10 +1,10 @@
 import ChangeTheme from './todoItem/ChangeTheme';
 import ComplatedButton from './todoItem/ComplatedButton';
 
-const TodoItem = () => {
+const TodoItem = ({ theme, setTheme }) => {
   return (
     <div style={{ marginBottom: '1em' }}>
-      <ChangeTheme />
+      <ChangeTheme theme={theme} setTheme={setTheme} />
       <ComplatedButton />
     </div>
   );
