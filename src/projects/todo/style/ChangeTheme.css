@@ -1,17 +1,17 @@
 /* Змінні */
 :root {
   --light-bg-color: rgb(222, 227, 227);
-  --light-text-color: rgb(47, 45, 45);
+  --light-text-color: rgb(63, 112, 112);
   --dark-bg-color: rgb(63, 112, 112);
-  --dark-text-color: rgb(45, 47, 72);
+  --dark-text-color: rgb(63, 112, 112);
   --primary-color: #4caf50;
   --hover-color: #45a049;
 }
 
 /* Загальні стилі */
 .btnTheme {
-  font-size: 16px;
-  padding: 8px 12px;
+  font-size: 14px;
+  padding: 6px 12px;
   cursor: pointer;
   border: none;
   border-radius: 5px;

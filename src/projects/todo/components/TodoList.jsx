@@ -1,5 +1,5 @@
 import './../style/TodoList.css';
-const TodoList = ({ todo, addTodo }) => {
+const TodoList = ({ todo, addTodo, theme }) => {
   const handleDelete = (index) => {
     const newTodo = [...todo];
     newTodo.splice(index, 1);
@@ -18,7 +18,14 @@ const TodoList = ({ todo, addTodo }) => {
 
   return (
     <div>
-      <h1>Todo list:</h1>
+      {todo.length >= 1 && (
+        <h1
+          style={{ color: theme === 'light' ? 'rgb(63, 112, 112)' : 'azure' }}
+        >
+          Todo list:
+        </h1>
+      )}
+
       <ul>
         {todo.map((todos, index) => {
           return (

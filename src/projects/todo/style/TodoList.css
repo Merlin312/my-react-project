@@ -24,7 +24,8 @@ li {
 }
 
 .btnDone {
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
+  background-color: rgb(63, 112, 112);
   color: #fff;
   padding: 0.4rem 0.6rem;
   border-radius: 7px;
@@ -34,6 +35,9 @@ li {
   transition: background-color 0.3s ease;
   margin-left: 2px;
   margin-right: 4px;
+}
+.btnDone:hover {
+  background-color: rgb(30, 102, 102);
 }
 
 .delete-button {
