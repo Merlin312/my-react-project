@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './../style/TodoList.css';
 const TodoList = ({ todo, addTodo }) => {
   const handleDelete = (index) => {
@@ -5,8 +6,15 @@ const TodoList = ({ todo, addTodo }) => {
     newTodo.splice(index, 1);
     addTodo(newTodo);
   };
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount(count + 1);
+  };
   return (
     <div>
+      <button className="btnTest" onClick={increment}>
+        {`Count: ${count}`}
+      </button>
       <h1>Todo list:</h1>
       <ul>
         {todo.map((todos, index) => {
@@ -17,7 +25,7 @@ const TodoList = ({ todo, addTodo }) => {
                 className="delete-button"
                 onClick={() => handleDelete(index)}
               >
-                Del
+                Delete
               </button>
             </li>
           );

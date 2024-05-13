@@ -7,15 +7,38 @@ li {
   background-color: #f3f3f3;
   border-radius: 8px;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+/***************************************/
+.btnTest {
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  margin-top: 1em;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: rgba(20, 20, 20, 0.8);
+  font-size: 1em;
+  font-weight: bold;
+  background-color: rgba(200, 200, 200, 0.8);
+}
+.btnTest:hover {
+  border: none;
+  background-color: rgba(82, 85, 95, 0.8);
+  color: #d0c9c9;
+}
+/***************************************/
 
 .delete-button {
   background-color: #f34336;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.45rem 1.1rem;
+  border-radius: 7px;
+  border: none;
   cursor: pointer;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Додано тінь до кнопки видалення */
   transition: background-color 0.3s ease;
