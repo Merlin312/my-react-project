@@ -8,20 +8,18 @@ const ChangeTheme = () => {
     // Отримуємо оновлене значення теми за допомогою функції оновлення
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
-
   // Виконуємо ефект при зміні значення теми
   useEffect(() => {
-    const bodyTag = document.querySelector('body');
-
+    const tedBody = document.querySelector('body');
     // Додаємо або видаляємо класи для зміни теми
-    bodyTag.classList.remove(theme === 'light' ? 'dark-theme' : 'light-theme');
-    bodyTag.classList.add(theme === 'light' ? 'light-theme' : 'dark-theme');
+    tedBody.classList.remove('light-theme', 'dark-theme');
+    tedBody.classList.add(theme === 'light' ? 'light-theme' : 'dark-theme');
   }, [theme]);
 
   return (
-    <div className={theme === 'light' ? 'light-theme' : 'dark-theme'}>
+    <div>
       <button onClick={toggleTheme}>Toggle Theme</button>
-      <h1>Theme: {theme}</h1>
+      {/* <h1>Theme: {theme}</h1> */}
     </div>
   );
 };
