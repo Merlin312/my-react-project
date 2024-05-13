@@ -1,8 +1,63 @@
-.light-theme {
-  background-color: rgb(222, 227, 227);
-  color: rgb(47, 45, 45);
+/* Змінні */
+:root {
+  --light-bg-color: rgb(222, 227, 227);
+  --light-text-color: rgb(47, 45, 45);
+  --dark-bg-color: rgb(41, 45, 45);
+  --dark-text-color: antiquewhite;
+  --primary-color: #4caf50;
+  --hover-color: #45a049;
 }
+
+/* Загальні стилі */
+.btnTheme {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  animation: pulse 1s 10;
+}
+
+/* Стилі для світлої теми */
+.light-theme {
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
+}
+
+.btnLight {
+  background-color: rgb(208, 235, 237);
+  border: 1px solid #333;
+  color: #333;
+}
+
+/* Стилі для темної теми */
 .dark-theme {
-  background-color: rgb(41, 45, 45);
-  color: antiquewhite;
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+.btnDark {
+  background-color: #3d5257;
+  color: white;
+}
+
+/* Стилі при наведенні на кнопку */
+.btnTheme:hover {
+  background-color: var(--hover-color);
+}
+
+/* Пульсуюча анімація */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
 }

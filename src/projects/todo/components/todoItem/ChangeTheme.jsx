@@ -18,8 +18,12 @@ const ChangeTheme = () => {
 
   return (
     <div>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      {/* <h1>Theme: {theme}</h1> */}
+      <button
+        className={`btnTheme ${theme === 'light' ? 'btnLight' : 'btnDark'}`}
+        onClick={toggleTheme}
+      >
+        Toggle Theme
+      </button>
     </div>
   );
 };
