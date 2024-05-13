@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './../style/TodoList.css';
 const TodoList = ({ todo, addTodo }) => {
   const handleDelete = (index) => {
@@ -6,21 +5,32 @@ const TodoList = ({ todo, addTodo }) => {
     newTodo.splice(index, 1);
     addTodo(newTodo);
   };
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount(count + 1);
+
+  const handleCompleted = (index) => {
+    const newTodo = todo.map((item, i) => {
+      if (i === index) {
+        return { ...item, completed: !item.completed };
+      }
+      return item;
+    });
+    addTodo(newTodo);
   };
+
   return (
     <div>
-      <button className="btnTest" onClick={increment}>
-        {`Count: ${count}`}
-      </button>
       <h1>Todo list:</h1>
       <ul>
         {todo.map((todos, index) => {
           return (
             <li key={index}>
-              {todos}
+              {todos.text}
+              <button
+                className="btnDone"
+                onClick={() => handleCompleted(index)}
+              >
+                {todos.completed ? 'Undo' : 'Done'}
+              </button>
+              {console.log(todos.completed)}
               <button
                 className="delete-button"
                 onClick={() => handleDelete(index)}
