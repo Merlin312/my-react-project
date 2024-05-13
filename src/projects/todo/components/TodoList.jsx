@@ -26,6 +26,7 @@ const TodoList = ({ todo, addTodo }) => {
               key={index}
               style={{
                 textDecoration: todos.completed ? 'line-through' : 'none',
+                color: todos.completed ? 'rgb(31, 45, 45)' : 'rgb(41, 45, 45)',
               }}
             >
               <div>

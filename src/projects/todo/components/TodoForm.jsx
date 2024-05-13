@@ -13,7 +13,6 @@ const TodoForm = ({ addTodo, todo }) => {
     if (value.trim() !== '') {
       const newTodo = [...todo, { text: value, completed: false }];
       addTodo(newTodo) || setValue('');
-      console.log(newTodo);
     } else {
       console.log('The field cannot be empty.');
       alert('The field cannot be empty.');

@@ -26,7 +26,7 @@ li {
 .btnDone {
   background-color: #4caf50;
   color: #fff;
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 7px;
   border: none;
   cursor: pointer;
@@ -39,7 +39,7 @@ li {
 .delete-button {
   background-color: #f34336;
   color: #fff;
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 7px;
   border: none;
   cursor: pointer;
