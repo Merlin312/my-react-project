@@ -9,7 +9,12 @@ const Todo = () => {
 
   return (
     <div>
-      <TodoItem theme={theme} setTheme={setTheme} />
+      <TodoItem
+        todo={todo}
+        addTodo={setTodo}
+        theme={theme}
+        setTheme={setTheme}
+      />
       <TodoForm todo={todo} addTodo={setTodo} />
       <TodoList theme={theme} todo={todo} addTodo={setTodo} />
     </div>
