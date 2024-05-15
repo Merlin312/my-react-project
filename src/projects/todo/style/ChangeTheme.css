@@ -5,7 +5,7 @@
   --dark-bg-color: rgb(63, 112, 112);
   --dark-text-color: rgb(63, 112, 112);
   --primary-color: #4caf50;
-  --hover-color: #45a049;
+  --hover-color: rgba(100, 200, 200, 0.2);
 }
 
 /* Загальні стилі */
@@ -38,8 +38,8 @@
 }
 
 .btnDark {
-  background-color: #3d5257;
-  color: white;
+  background-color: rgba(8, 0, 0, 0.2);
+  color: rgba(100, 200, 200, 0.2);
 }
 
 /* Стилі при наведенні на кнопку */
