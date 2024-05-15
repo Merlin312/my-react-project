@@ -11,7 +11,6 @@ const ComplatedButton = ({ todo, addTodo }) => {
         return { ...item, completed: false };
       }
     });
-    console.log(done);
     addTodo(changeComplated);
   };
   return (
