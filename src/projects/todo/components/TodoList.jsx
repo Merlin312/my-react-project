@@ -1,13 +1,17 @@
+import React, { useEffect, useState } from 'react';
 import './../style/TodoList.css';
+
 const TodoList = ({ todo, addTodo, theme }) => {
+  const [sortedTodo, setSortedTodo] = useState([]);
+
   const handleDelete = (index) => {
-    const newTodo = [...todo];
+    const newTodo = todo.slice(); // Створюємо копію масиву todo
     newTodo.splice(index, 1);
     addTodo(newTodo);
   };
 
   const handleCompleted = (index) => {
-    const newTodo = todo.map((item, i) => {
+    const newTodo = sortedTodo.map((item, i) => {
       if (i === index) {
         return { ...item, completed: !item.completed };
       }
@@ -15,6 +19,12 @@ const TodoList = ({ todo, addTodo, theme }) => {
     });
     addTodo(newTodo);
   };
+
+  // Ефект для сортування завдань при зміні масиву todo
+  useEffect(() => {
+    const sorted = [...todo].sort((a, b) => a.completed - b.completed);
+    setSortedTodo(sorted);
+  }, [todo]);
 
   return (
     <div>
@@ -27,47 +37,44 @@ const TodoList = ({ todo, addTodo, theme }) => {
       )}
 
       <ul>
-        {todo.map((todos, index) => {
-          return (
-            <li
-              key={index}
-              style={{
-                textDecoration: todos.completed ? 'line-through' : 'none',
-                color: todos.completed ? 'rgb(31, 45, 45)' : 'rgb(41, 45, 45)',
-              }}
-            >
-              <div>
-                <span
-                  className="circle"
-                  style={{
-                    backgroundColor: todos.completed
-                      ? '#4CAF50'
-                      : 'transparent',
-                  }}
-                ></span>
-
-                {todos.text}
-              </div>
-
-              <div>
-                <button
-                  className="btnDone"
-                  onClick={() => handleCompleted(index)}
-                >
-                  {todos.completed ? 'Undo' : 'Done'}
-                </button>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(index)}
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
-          );
-        })}
+        {sortedTodo.map((todoItem, index) => (
+          <li
+            key={index}
+            style={{
+              textDecoration: todoItem.completed ? 'line-through' : 'none',
+              color: todoItem.completed ? 'rgb(31, 45, 45)' : 'rgb(41, 45, 45)',
+            }}
+          >
+            <div>
+              <span
+                className="circle"
+                style={{
+                  backgroundColor: todoItem.completed
+                    ? '#4CAF50'
+                    : 'transparent',
+                }}
+              ></span>
+              {todoItem.text}
+            </div>
+            <div>
+              <button
+                className="btnDone"
+                onClick={() => handleCompleted(index)}
+              >
+                {todoItem.completed ? 'Undo' : 'Done'}
+              </button>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(index)}
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
+
 export default TodoList;
