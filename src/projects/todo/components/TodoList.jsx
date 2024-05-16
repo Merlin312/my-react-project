@@ -77,7 +77,7 @@ const TodoList = ({ todo, addTodo, theme }) => {
                 className="btnDone"
                 onClick={() => handleCompleted(index)}
               >
-                {todoItem.completed ? 'Done' : 'UnDone'}
+                {todoItem.completed ? 'UnDone' : 'Done'}
               </button>
               {/* Кнопка для видалення завдання */}
               <button
