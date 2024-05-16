@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './../style/TodoList.css';
+import { useDispatch, useSelector } from 'react-redux';
+import DeleteAllTodos from './buttons/DeleteAllTodos';
 
 const TodoList = ({ todo, addTodo, theme }) => {
   // Створюємо стан для відсортованого масиву todo
   const [sortedTodo, setSortedTodo] = useState([]);
+
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+  console.log(todos);
 
   // Функція для видалення завдання за індексом
   const handleDelete = (index) => {
@@ -89,6 +95,9 @@ const TodoList = ({ todo, addTodo, theme }) => {
             </div>
           </li>
         ))}
+        {sortedTodo.length >= 10 && (
+          <DeleteAllTodos todo={todo} addTodo={addTodo} />
+        )}
       </ul>
     </div>
   );
