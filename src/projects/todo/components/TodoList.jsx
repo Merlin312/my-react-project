@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './../style/TodoList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteAllTodos from './buttons/DeleteAllTodos';
+import ButtonDone from './buttons/ButtonDone';
 
 const TodoList = ({ todo, addTodo, theme }) => {
   const todos = useSelector((state) => state.todos);
@@ -54,7 +55,7 @@ const TodoList = ({ todo, addTodo, theme }) => {
 
       {/* Виводимо список завдань */}
       <ul>
-        {sortedTodo.map((todoItem, index) => (
+        {todos.map((todoItem, index) => (
           <li
             key={index}
             style={{
@@ -77,13 +78,7 @@ const TodoList = ({ todo, addTodo, theme }) => {
               {todoItem.text}
             </div>
             <div>
-              {/* Кнопка для зміни статусу завдання */}
-              <button
-                className="btnDone"
-                onClick={() => handleCompleted(index)}
-              >
-                {todoItem.completed ? 'UnDone' : 'Done'}
-              </button>
+              <ButtonDone />
               {/* Кнопка для видалення завдання */}
               <button
                 className="delete-button"
