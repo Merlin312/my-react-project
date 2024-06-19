@@ -20,6 +20,7 @@ const TodoList = ({ todo, addTodo, theme }) => {
     // Оновлюємо стан todo
     addTodo(newTodo);
   };
+  console.log(todo);
 
   // Функція для зміни статусу завершення завдання
   const handleCompleted = (index) => {
